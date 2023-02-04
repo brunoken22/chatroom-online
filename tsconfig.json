@@ -6,5 +6,5 @@
       "resolveJsonModule": true,
 
    },
-   "files": ["/client/index.ts"]
+   "files": ["/server/index.ts"]
 }
