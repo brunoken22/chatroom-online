@@ -24,7 +24,7 @@
     "build:front": "parcel build ./src/index.html",
     "build:back": "tsc",
     "build": "yarn build:front && yarn build:back",
-    "start": "node ./server/dev.js"
+    "start": "node ./server/index.js"
   },
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
