@@ -1,5 +1,6 @@
 import { rtdb } from "./db";
 import map from "lodash/map";
+import { Router } from "@vaadin/router";
 const API_BASE_URL = process.env.BACKEND_URL || "http://localhost:3000";
 
 const state = {
@@ -19,12 +20,31 @@ const state = {
       const cs = this.getState();
       const chatrooms = rtdb.ref("/rooms/" + cs.rtdbRoomId + "/messages");
 
-      chatrooms.on("value", (snapshot) => {
-         const valor = snapshot.val();
-         const messageList = map(valor);
+      const ref = rtdb
+         .ref("/rooms/" + cs.rtdbRoomId)
+         .get()
+         .then((res) => {
+            return res.exists();
+         })
+         .then((resp) => {
+            return resp;
+         });
+      ref.then((res) => {
+         if (!res) {
+            console.log(res);
 
-         cs.message = messageList;
-         this.setState(cs);
+            alert("El Room ID no existe");
+            Router.go("/");
+            return;
+         } else {
+            Router.go("/chatroom");
+            chatrooms.on("value", (snapshot) => {
+               const valor = snapshot.val();
+               const messageList = map(valor);
+               cs.message = messageList;
+               this.setState(cs);
+            });
+         }
       });
    },
    getState() {

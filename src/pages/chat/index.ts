@@ -35,7 +35,7 @@ class Chat extends HTMLElement {
       this.classList.add("body");
       this.innerHTML = `
             <div class="header">
-            <svg xmlns="http://www.w3.org/2000/svg" class=" icon-tabler icon-tabler-brand-whatsapp" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class=" icon-tabler icon-tabler-brand-whatsapp" width="72" height="70" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
             <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
@@ -91,8 +91,14 @@ class Chat extends HTMLElement {
             padding-right:20px;
          }
          .contenedor{
-            width:80%;
+            width:93%;
             margin:auto;
+         }
+         @media(min-width:500px){
+            .contenedor{
+               
+               width:80%;
+            }
          }
          .description-chat{
             display:flex;
@@ -111,12 +117,17 @@ class Chat extends HTMLElement {
             color:#3e8ed0;
          }
          .chat{
-            font-size:3.5rem;
+            font-size:2.5rem;
             font-weight:bold;
             font-family: 'Poppins';
             margin-bottom:0;
-            margin-top:35px;
             
+         }
+         @media(min-width:500px){
+            .chat{
+               font-size:3.5rem;
+               margin-top:35px;
+            }
          }
          .chat-Name{
             font-size:1.2rem;

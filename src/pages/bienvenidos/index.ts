@@ -48,7 +48,6 @@ export class InitBievenidos extends HTMLElement {
             const rtdbRoom = target.roomId.value;
             state.data.rtdbRoomId = rtdbRoom;
             state.listenRoom();
-            Router.go("/chatroom");
          }
       });
    }
@@ -119,11 +118,11 @@ export class InitBievenidos extends HTMLElement {
             display:flex;
             flex-direction:column;
             row-gap:20px;
-            margin-top:20%;
+            margin-top:40px;
          }
          @media(min-width:500px){
             .form{
-               margin-top:120px;
+               margin-top:100px;
             }
          }
          .btn{

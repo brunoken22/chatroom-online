@@ -7,5 +7,4 @@ import { state } from "./state";
 
 (function () {
    state.init();
-   state.listenRoom();
 })();
