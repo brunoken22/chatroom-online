@@ -31,7 +31,6 @@ class Chat extends HTMLElement {
       const hola = this.message.map((msg) => {
          return msg.message;
       });
-      console.log(hola);
 
       this.classList.add("body");
       this.innerHTML = `
