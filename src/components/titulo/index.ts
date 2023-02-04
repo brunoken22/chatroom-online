@@ -9,8 +9,21 @@ export class Titulo extends HTMLElement {
       const nameTitle = this.getAttribute("title");
 
       div.innerHTML = `
-         <h1>${nameTitle}</h1>
+         <h1 class="titulo">${nameTitle}</h1>
       `;
+      const style = document.createElement("style");
+      style.innerHTML = `
+         .titulo{
+            font-size:2rem;
+            margin-bottom:0;
+         }
+         @media(min-width:500px){
+           .titulo{
+               font-size:3rem;
+           }
+         }
+      `;
+      shadow.appendChild(style);
       shadow.appendChild(div);
    }
 }

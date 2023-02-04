@@ -56,9 +56,9 @@ export class InitBievenidos extends HTMLElement {
       const div = document.createElement("div");
       div.innerHTML = `
          <div class="header"></div>
-         <div class="contenedor">
-         <form class="box form"  >
-         <custom-title class="title" title="Bienvenid@s"></custom-title>
+         <div class="contenedor desktop">
+            <form class="box form">
+               <custom-title class="title" title="Bienvenid@s"></custom-title>
                   <div>
                      <label class="label" for="email">Email</label>
                      <input class="input is-normal is-rounded" type="email" id="email" name="email" placeholder="Ingrese su Email:">
@@ -86,8 +86,8 @@ export class InitBievenidos extends HTMLElement {
                      <button type="submit" class="button is-info is-medium">Comenzar</button>
                   </div>
                   <div class="contenedor-loader" style="display:none">
-                     <div class="carga"></div>
-                  </div>
+                  <div class="carga"></div>
+               </div>
             </form>
          </div>        
       `;
@@ -107,15 +107,25 @@ export class InitBievenidos extends HTMLElement {
          .contenedor{
             font-family:'Poppins';  
             font-size:1.5rem;
-            width:80vw;
-            margin:0 auto
+            margin:0 auto;
+            width:90vw;
+         }
+         @media(min-width:500px){  
+            .contenedor{
+               max-width: 1000px;
+            }
          }
          .form{
             display:flex;
             flex-direction:column;
             row-gap:20px;
+            margin-top:20%;
          }
-       
+         @media(min-width:500px){
+            .form{
+               margin-top:120px;
+            }
+         }
          .btn{
             display:flex;
             justify-content:center;
